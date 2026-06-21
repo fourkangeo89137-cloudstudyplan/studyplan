@@ -1,35 +1,10 @@
-[12:26 pm, 20/06/2026] fourkangeo89137: import streamlit as st
-
-# ওয়েবসাইটের টাইটেল ও কনফিগারেশন
-st.set_page_config(page_title="স্ট্যাডি প্ল্যান অনলাইন প্ল্যাটফরম", layout="wide")
-
-st.title("স্ট্যাডি প্ল্যান অনলাইন প্ল্যাটফরম")
-st.write("---")
-
-# প্রধান দুটি উইং বা পার্ট
-col1, col2 = st.columns(2)
-
-with col1:
-    st.header("🏛️ জেনারেল পার্ট")
-    st.write("সাধারণ স্কুল ও মাদ্রাসার ৯ম-১০ম শ্রেণীর বিজ্ঞান শাখা।")
-    if st.button("জেনারেল সেকশনে প্রবেশ করুন", key="general"):
-        st.success("জেনারেল সেকশনটি শীঘ্রই চালু হচ্ছে!")
-
-with col2:
-    st.header("🛠️ কারিগরি (ভোকেশনাল) পার্ট")
-    st.write("ভোকেশনাল ও টেকনিক্যাল শাখার জন্য বিশেষায়িত ৬০ মার্কের কমপ্লিট মিশন।")
-    
-    # ৯ম ও ১০ম শ্রেণীর বিভাজন
-    class_option = st.radio("শ্রেণী নির্বাচন করুন:", ["৯ম শ্রেণী (বোর্ড ফাইনাল - FREE)", "১০ম শ্রেণী (এসএসসি ফাইনাল - Premium)"])
-    
-    if st.button("কারিগরি সেকশনে প্রবেশ করুন", key="vocational"):
-        st.info(f"আপনি {class_option}-এ প্রবেশ করছেন...")
-[12:58 pm, 20/06/2026] fourkangeo89137: import streamlit as st
+import streamlit as st
 
 # ওয়েবসাইটের টাইটেল ও কনফিগারেশন
 st.set_page_config(page_title="Fourkan's Science Platform", layout="wide")
 
-st.title("স্ট্যাডি প্ল্যান অনলাইন প্ল্যাটফরম")
+st.title("🔬 ফিজিক্স ও কেমিস্ট্রি ডিজিটাল প্ল্যাটফর্ম")
+st.subheader("শিক্ষক: মো: ফোরকান")
 st.write("---")
 
 # সাইডবারে নোটিশ বা পরিচিতি
@@ -77,4 +52,13 @@ with col2:
             st.write("✨ *অধ্যায়: কাজ, ক্ষমতা ও শক্তি*")
             st.caption("লেকচার ভিডিও নিচে দেখুন:")
             st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ") # আপনার ক্লাস লিংক
-            st.button("
+            st.button("📥 লেকচার শিট ডাউনলোড করুন (PDF)", key="pdf_p1")
+            
+    elif class_option == "১০ম শ্রেণী (এসএসসি ফাইনাল - Premium)":
+        st.markdown("### 💎 ১০ম শ্রেণীর এসএসসি প্রিমিয়াম মিশন")
+        st.error("🔒 এই সেকশনের ক্লাসগুলো দেখতে সাবস্ক্রিপশন প্রয়োজন।")
+        
+        subject_voc10 = st.selectbox("বিষয় (১০ম):", ["পদার্থবিজ্ঞান-২", "রসায়ন-২"])
+        
+        if st.button("💳 প্রিমিয়াম এক্সেস কিনুন (বিকাশ/নগদ)", key="pay_voc"):
+            st.info("পেমেন্ট গেটওয়ে খুব শীঘ্রই সচল করা হচ্ছে। সাথে থাকার জন্য ধন্যবাদ!")
