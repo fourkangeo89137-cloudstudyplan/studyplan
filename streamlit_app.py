@@ -1,4 +1,4 @@
-[12:58 pm, 20/06/2026] fourkangeo89137: import streamlit as st
+fourkangeo89137: import streamlit as st
 
 # ওয়েবসাইটের টাইটেল ও কনফিগারেশন
 st.set_page_config(page_title="Fourkan's Science Platform", layout="wide")
