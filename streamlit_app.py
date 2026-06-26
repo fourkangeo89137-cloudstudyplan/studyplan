@@ -139,7 +139,7 @@ with tab3:
     st.markdown("##### 📝 কুইজ ও মূল্যায়ন")
     st.caption("শিক্ষার্থীদের অনুশীলনের জন্য আধুনিক প্রশ্নব্যাংক এখানে সাজানো থাকবে।")
     st.markdown('</div>', unsafe_allow_html=True)
-[2:59 pm, 26/06/2026] fourkangeo89137: import streamlit as st
+    fourkangeo89137: import streamlit as st
 
 # ১. বিশ্বমানের ও রেসপনসিভ পেজ কনফিগারেশন
 st.set_page_config(
