@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ২. কাস্টম সিএসএস (CSS) - আন্তর্জাতিক মানের লাক্সারি ও আধুনিক ডিজাইন
+# ২. কাস্টম সিএসএস (CSS) - প্রিমিয়াম সাইডবার ও গ্লোয়িং বাটন আর্কিটেকচার
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
@@ -33,8 +33,6 @@ st.markdown("""
         margin-bottom: 40px;
         border: 1px solid rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(12px);
-        position: relative;
-        overflow: hidden;
     }
     
     .hero-title {
@@ -63,10 +61,69 @@ st.markdown("""
         margin-top: 15px;
     }
     
-    /* সাইডবার মডিফিকেশন */
+    /* বিশ্বমানের সাইডবার মডিফিকেশন */
     section[data-testid="stSidebar"] {
-        background-color: #0f172a !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        background-color: #090d16 !important;
+        border-right: 1px solid rgba(99, 102, 241, 0.15);
+    }
+    
+    /* সাইডবারের ভেতরের উপাদানগুলোর ডিজাইন */
+    div[data-testid="stSidebarUserContent"] {
+        padding-top: 20px;
+    }
+    
+    /* রেডিও বাটনের প্রিমিয়াম রূপান্তর (Custom Styling for Sidebar Radio) */
+    div[data-testid="stRadio"] > label {
+        color: #6366f1 !important;
+        font-weight: 600 !important;
+        font-size: 18px !important;
+    }
+    
+    div[data-testid="stRadio"] label[data-baseweb="radio"] {
+        background: rgba(30, 41, 59, 0.3) !important;
+        padding: 14px 20px !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        margin-bottom: 10px !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+    }
+    
+    /* মাউস নিলে যে চমৎকার এফেক্ট হবে (Hover Effect) */
+    div[data-testid="stRadio"] label[data-baseweb="radio"]:hover {
+        border-color: #6366f1 !important;
+        background: rgba(99, 102, 241, 0.1) !important;
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.2) !important;
+        transform: translateY(-2px);
+    }
+    
+    /* সিলেক্টেড রেডিও বাটনের স্টাইল */
+    div[data-testid="stRadio"] label[data-baseweb="radio"][aria-checked="true"] {
+        background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%) !important;
+        border-color: #6366f1 !important;
+        box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4) !important;
+    }
+    
+    /* ট্যাবের গ্লসি ডিজাইন */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 10px;
+        background-color: rgba(30, 41, 59, 0.2);
+        padding: 8px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        padding: 12px 24px !important;
+        border-radius: 10px !important;
+        color: #94a3b8 !important;
+        transition: all 0.3s !important;
+    }
+    
+    .stTabs [data-baseweb="tab"][aria-selected="true"] {
+        background-color: #6366f1 !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3) !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -79,22 +136,21 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# ৪. সাইডবার লেআউট
+# ৪. সাইডবার লেআউট - সুসজ্জিত চ্যাপ্টার লিস্ট
 with st.sidebar:
-    st.markdown("### 📚 পাঠ্যক্রম নির্দেশক")
-    st.write("তোমার কাঙ্ক্ষিত অধ্যায়টি নির্বাচন করো:")
+    st.markdown("### 📚 অধ্যায় নির্দেশিকা")
     
     selected_chapter = st.radio(
-        "",
+        "পড়াশোনার টপিক বেছে নাও:",
         [
             "০১. রসায়নের ধারণা",
-            "০২. পদার্থের অবস্থা",
-            "০৩. পদার্থের গঠন",
+            "০২. पदार्थों অবস্থা",
+            "০৩. पदार्थों গঠন",
             "০৪. পর্যায় সারণি",
             "০৫. রাসায়নিক বন্ধন",
             "০৬. মোলের ধারণা ও রাসায়নিক গণনা"
         ],
-        label_visibility="collapsed"
+        label_visibility="visible"
     )
     
     st.markdown("---")
