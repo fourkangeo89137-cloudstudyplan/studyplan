@@ -178,7 +178,7 @@ with st.sidebar:
 # ৫. মূল কন্টেন্ট এরিয়া
 st.markdown(f"## 📖 {selected_chapter}")
 
-tab1, tab2, tab3 = st.tabs(["🎯 মূল পাঠ্যবই ও কনসেপ্ট", "🎥 ভিডিও ও অ্যানিমেশন", "📝 সেলফ অ্যাসেสมেন্ট"])
+tab1, tab2, tab3 = st.tabs(["🎯 মূল পাঠ্যবই ও কনসেপ্ট", "🎥 ভিডিও ও অ্যানিমেশন", "📝 সেলফ অ্যাসেসমেন্ট"])
 
 with tab1:
     st.markdown('<div class="content-card">', unsafe_allow_html=True)
