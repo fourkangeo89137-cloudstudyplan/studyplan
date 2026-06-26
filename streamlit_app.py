@@ -9,12 +9,12 @@ st.set_page_config(
 )
 
 # ২. রেডি গুগল শিট লিংক (সরাসরি বসিয়ে দেওয়া হয়েছে)
-GSHEET_URL = "https://docs.google.com/spreadsheets/d/1XgXmO98X9Z9bA50mH4b_wLzO68lJvW5j-v9pY-f9B_w/edit?usp=sharing"
+GSHEET_URL = "study_data.csv"
 
 def load_data(url):
     try:
-        csv_url = url.split('/edit')[0] + '/export?format=csv'
-        return pd.read_csv(csv_url)
+        
+        return pd.read_csv(url)
     except:
         return None
 
